@@ -99,7 +99,7 @@ int	get_argument(char *argument)
 	content = ft_atoi(argument);
 	if (content < INT16_MIN || content > INT16_MAX)
 		error("\033[31mGreater than INT_MAX or less than INT_MIN\e[0m\n");
-	if ((argument[i] != '-') && (argument[i] > '9' || argument[i] < '0'))
+	if ((argument[i] == '-') || (argument[i] > '9' || argument[i] < '0'))
 		error("\033[31mInvalid arguments\e[0m\n");
 	i++;
 	while (argument[i] != '\0')
